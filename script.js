@@ -37,22 +37,18 @@ $("#post-beer").on("click", function() {
 //define switch for sorting up or down
 var sortSwitch = true;
 
-//sort from lowest to highest rating by default, change the switch
-var sortBeersUp = function () {
-	
+//sort from lowest to highest rating by default, then change the switch
+var sortBeersUp = function () {	
 	beers.sort(function (a, b) {
   	return a.rating - b.rating;
 	})
-
 };
 
-//sort from highest to lowest ratings after clicked already
+//sort from highest to lowest ratings if already switched, then change  the switch
 var sortBeersDown = function() {
-
 	beers.sort(function (b, a) {
   	return a.rating - b.rating;
 	})
-
 };
 
 //when sort button is clicked, sort the array list by rating accordingly (with sortBeersUp or sortBeersDown functions)
