@@ -1,20 +1,22 @@
 // js var's for jquery objects
 var $beerName = $("#beerName");
 var $beerCategory = $("#beerCategory");
-var $beersList = $(".beers-list");
 var $rating = $("#rating");
+var $beersList = $(".beers-list");
 
 //start with empty string to fill with beers
 var beers = [];
 
-//define function to add a new object with beer properties from inputs, add to array, clear input fields
+//define function to add a new object with beer properties from inputs
 var addBeer = function (name,category,rating) {
 	var newBeer = {
 		name: name.val(),
 		category: category.val(),
 		rating: rating.val()
 	}
+	//add to array
 	beers.push(newBeer);
+	//clear input fields
 	name.val("");
 	category.val("");
 	rating.val("");
@@ -34,7 +36,7 @@ $("#post-beer").on("click", function() {
 	updateBeers();
 });
 
-//define switch for sorting up or down
+//define switch for default sorting
 var sortSwitch = true;
 
 //sort from lowest to highest rating by default, then change the switch
