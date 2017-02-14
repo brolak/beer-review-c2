@@ -7,10 +7,7 @@ var $rating = $("#rating");
 //start with empty string to fill with beers
 var beers = [];
 
-//define switch for sorting up or down
-var sortSwitch = true;
-
-//add a new object with beer properties from inputs, add to array, clear input fields
+//define function to add a new object with beer properties from inputs, add to array, clear input fields
 var addBeer = function (name,category,rating) {
 	var newBeer = {
 		name: name.val(),
@@ -23,7 +20,7 @@ var addBeer = function (name,category,rating) {
 	rating.val("");
 };
 
-//clear beer list, sort array, then fill list with entire array
+//define function to clear beer list, then fill list with entire array
 var updateBeers = function () {
 	$beersList.empty();
 	for(i=0;i<beers.length;i++) {
@@ -31,11 +28,14 @@ var updateBeers = function () {
 	}
 }
 
-//when clicking submit button, put new beer object on list and refresh the list
+//when clicking submit button, put new beer object on list (addBeer function) and update the list (updateBeers function)
 $("#post-beer").on("click", function() {
 	addBeer($beerName,$beerCategory,$rating);
 	updateBeers();
 });
+
+//define switch for sorting up or down
+var sortSwitch = true;
 
 //sort from lowest to highest rating by default, change the switch
 var sortBeersUp = function () {
@@ -55,7 +55,7 @@ var sortBeersDown = function() {
 
 };
 
-//when sort button if clicked, sort the array list by rating accordingly
+//when sort button is clicked, sort the array list by rating accordingly (with sortBeersUp or sortBeersDown functions)
 $("#sort").on("click", function() {
 	if(sortSwitch===true){
 	sortBeersUp();
@@ -65,4 +65,4 @@ $("#sort").on("click", function() {
 	sortSwitch = true;
 	}
 	updateBeers();
-})
+});
