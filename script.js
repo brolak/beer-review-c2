@@ -18,9 +18,9 @@ var addBeer = function (name,category,rating) {
 		rating: rating.val()
 	}
 	beers.push(newBeer);
-	name.val = "";
-	category.val = "";
-	rating.val = 0;
+	name.val("");
+	category.val("");
+	rating.val("");
 };
 
 var updateBeers = function () {
