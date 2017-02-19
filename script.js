@@ -53,6 +53,7 @@ var updateBeers = function () {
 //end of BeerReviewApp
 
 var app = BeerReviewApp();
+
 // js var's for jquery objects
 var $beerName = $("#beerName");
 var $beerCategory = $("#beerCategory");
@@ -64,8 +65,6 @@ $("#post-beer").on("click", function() {
 	app.addBeer($beerName,$beerCategory,$rating);
 	app.updateBeers();
 });
-
-
 
 //when sort button is clicked, sort the array list by rating accordingly (with sortBeersUp or sortBeersDown functions)
 $("#sort").on("click", function() {
